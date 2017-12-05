@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html ng-app="LaMiaPrimaApp"><!--Indica que es una aplicación de angular -->
+<head>
+	<meta charset="utf-8">
+	<title>Hola Controller(AngJs)</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+	<script src="controller.js"></script>
+</head>
+	<body ng-controller="PrimaController">
+		<input type="text" ng-model="nombre">
+		{{"Hola "+ nombre}}
+	</body>
+</html>
