@@ -7,7 +7,17 @@
 	<script src="controller.js"></script>
 </head>
 	<body ng-controller="PrimaController">
-		<input type="text" ng-model="nombre">
-		{{"Hola "+ nombre}}
+		<input type="text" ng-model="nuevoEstado.estado">
+		<br>
+		<input type="text" ng-model="nuevoEstado.usuario">
+		<br>
+		<button ng-click="agregarEstado()">Nuevo Estado</button>
+		<br>
+		<h3>Estados Generales</h3>
+		<ul>
+			<li ng-repeat="estado in estados">
+				{{estado.estado}} - <strong>{{estado.usuario}}</strong>
+			</li>			
+		</ul>
 	</body>
 </html>
