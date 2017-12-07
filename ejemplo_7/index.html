@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="mainModule">
+<head>
+	<title>Ejemplo $apply</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+	<script>
+		angular.module('mainModule', [])
+		.controller('miControlador',function($scope){
+			$scope.nombre='Stiv';
+			/*setTimeout(function() {
+				//$scope.nombre='la mia app';
+				console.log($scope.nombre);
+				//$scope.$digest(); // Delegar al dom que verifique los cambios y los actualize en la vista
+				$scope.$apply(function() {
+					$scope.nombre = 'la mia app';
+				});
+			},2000);*/
+
+			/*Ejemplo de como utlizarlo en caso*/
+			document.querySelector("#miboton").addEventListener("click",function() {
+				$scope.$apply(function () {
+					$scope.nombre='Studio piu o meno';
+				});
+			});
+		});
+	</script>
+</head>
+<body ng-controller="miControlador">
+	<h1>{{ nombre }}</h1>
+	<button id="miboton">Hey!!!!!!!!!</button>
+</body>
+</html>
