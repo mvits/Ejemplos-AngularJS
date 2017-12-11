@@ -14,6 +14,7 @@ angular.module('ListaNotas', ["LocalStorageModule"])
 		servicioLista.agregar = function (nuevaActividad) {
 			servicioLista.actividades.push(nuevaActividad);
 			servicioLista.actualizarLocalStorage();
+
 		};
 
 		servicioLista.actualizarLocalStorage = function () {
@@ -23,6 +24,7 @@ angular.module('ListaNotas', ["LocalStorageModule"])
 		servicioLista.limpiar =function () {
 			servicioLista.actividades = []; 
 			servicioLista.actualizarLocalStorage();
+			return servicioLista.getTodo();
 		};
 
 		servicioLista.getTodo = function () {
@@ -51,6 +53,7 @@ angular.module('ListaNotas', ["LocalStorageModule"])
 		
 
 		$scope.todo = ServicioLista.getTodo();
+		$scope.newActv = {};
 	
 		$scope.agregarNota = function() {
 			ServicioLista.agregar($scope.newActv);
@@ -62,7 +65,7 @@ angular.module('ListaNotas', ["LocalStorageModule"])
 		}
 
 		$scope.limpiarNota = function(item){
-			ServicioLista.limpiar();
+			$scope.todo = ServicioLista.limpiar();
 		}
 
 
