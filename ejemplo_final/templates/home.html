@@ -1,0 +1,44 @@
+<lx-tabs >
+    <lx-tab lx-label="Publicaciones">
+        <p class="p+">
+        	<div class="card top-space" ng-repeat="publicacion in publicaciones">
+        		<div class="p+">
+        			<strong class="fs-headline display-block tc-red-900">
+        				{{publicacion.title}}
+        			</strong>
+        			<div class="paragraph fs-body-1 mt+">
+        				{{publicacion.body}}
+        			</div>
+        			<div class="card__actions">
+        				<a href="#!/post/{{publicacion.id}}" class="btn btn--m btn--blue btn--flat" lx-ripple>Leer más ...</a>
+        				<a ng-click="removePublicacion(publicacion)" class="btn btn--m btn--red btn--flat" lx-ripple>Eliminar</a>
+        			</div>
+        		</div>
+        	</div>
+        </p>
+    </lx-tab>
+ 
+    <lx-tab lx-label="Usuarios" >
+        <div class="card top-space" ng-repeat="usuario in usuarios">
+        	<div flex-container="row">
+	        	<div class="card__img card__img--left" style="height: 160px;">
+	        		<img src="imgs/user.jpg">
+	        	</div>
+	        	<div flex-item flex-container="column">
+	        		<div flex-item>
+	        			<strong class="fs-headline display-block">
+	        				{{usuario.name}}
+	        			</strong>
+	        			<strong class="fs-subhead tc-black-2 display-block">
+	        				{{usuario.email}}
+	        			</strong>
+	        		</div>
+	        		<div class="card__actions">
+	        			<a href="#">Ver Usuario</a>
+	        		</div>        		
+	        	</div>
+        	</div>  	
+        </div>
+    </lx-tab>
+ 
+</lx-tabs>
