@@ -1,0 +1,29 @@
+<form ng-submit="savePublicacion()">
+	<div class="card  top-space">
+		<h1> {{titulo}} </h1>
+		 <div class="p+">
+		 	<div flex-container="row">
+		 		<div flex-item>
+		 			<lx-text-field label="Título">
+		 				<input type="text" ng-model="publicacion.title">
+		 			</lx-text-field>
+		 		</div>
+		 	</div>
+		 	<div flex-container="row">
+		 		<div flex-item>
+		 			<lx-text-field label="Contenido">
+		 				<textarea ng-model="publicacion.body">
+		 					
+
+		 				</textarea> 
+		 			</lx-text-field>
+		 		</div>
+		 	</div>
+		 </div>
+		 <div class="card__actions">
+		 	<button type="submit" class="btn btn--blue btn--l btn--raised">
+		 		Guardar
+		 	</button>
+		 </div>
+	</div>
+</form>
